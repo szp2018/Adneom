@@ -1,0 +1,51 @@
+{% block body %}
+
+    <h1> Information General sur la serie </h1>
+
+        {% for informations in information %}
+
+            <div class="row">
+                <div class="col-md-4">Genre</div>
+                <div class="col-md-8">{{informations.genre}}</div>
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-4">Création</div>
+                <div class="col-md-8">{{informations.creation}}</div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">Pays d'origine	</div>
+                <div class="col-md-8">{{informations.pays}}</div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">Chaine d'origine</div>
+                <div class="col-md-8">{{informations.chainedorig}}</div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">Nb. de saisons</div>
+                <div class="col-md-8">{{informations.nbsaison}}</div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">Nb. d'épisodes</div>
+                <div class="col-md-8">{{informations.nbepisodes}}</div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">Durée</div>
+                <div class="col-md-8">{{informations.duree}}</div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">Acteurs</div>
+                <div class="col-md-8">{{informations.acteurs}}</div>
+            </div>
+        {% endfor %}
+
+
+
+
+{% endblock %}

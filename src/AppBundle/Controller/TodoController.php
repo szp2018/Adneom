@@ -16,19 +16,34 @@ class TodoController extends Controller{
      * @param $todos
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function listAction(Request $request,$listevideos){
+    public function listAction(Request $request){
 
-        $listevideos = $this->getDoctrine()
-            ->getRepository('AppBundle:Todo')
-            ->findAll();
-            //->find($id);
+        $entities = $this->getDoctrine()->getRepository("AppBundle:Todo")->findAll();
 
-        return $this->render('todo/index.html.twig',array(
-            'listevideos'=>$listevideos,
-            'name' =>'name',
-            'id' =>'id',
-        ));
+        return $this->render('todo/index.html.twig',
+            array('entities' => $entities));
 
+
+        $information = $this->getDoctrine()->getRepository("AppBundle:Info")->findAll();
+
+        return $this->render('todo/index.html.twig',
+            array('information' => $information));
+
+    }
+
+
+    /**
+     * @Route("/", name="todo_inform")
+     * @param Request $request
+     * @param $information
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function informAction(Request $request){
+
+        $information = $this->getDoctrine()->getRepository("AppBundle:Info")->findAll();
+
+        return $this->render('todo/information.html.twig',
+            array('information' => $information));
 
     }
 
