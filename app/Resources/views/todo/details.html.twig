@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <a class="btn btn-default" href="/">Retour à la Liste </a>
+    <hr>
+
+    <h2 class="page-header">{{todo.saison}}: {{todo.name}} </h2>
+
+ <iframe src="{{todo.link}}" frameborder="0"  width="500"  height="300" marginwidth="0" marginheight="0" scrolling="no" allowfullscreen=""></iframe>
+
+
+{% endblock %}
